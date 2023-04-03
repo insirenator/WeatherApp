@@ -35,9 +35,9 @@ async function getWeatherData(city) {
 function displayData(data) {
 	createIcon(data.current.condition.icon);
 	temperature.innerHTML = `${data.current.temp_c}&#x2103;`;
-	city.textContent = `${data.location.name}, ${data.location.country}`;
+	city.textContent = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
 	humidity.textContent = `${data.current.humidity}`;
-	precipitation.textContent = `${data.current.precip_in} inches`;
+	precipitation.textContent = `${data.current.precip_in} in`;
 	wind.textContent = `${data.current.wind_kph} kph`;
 }
 

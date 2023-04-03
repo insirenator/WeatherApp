@@ -3,11 +3,11 @@
 * {
 	box-sizing: border-box;
 	font-family: "Poppins";
+	padding: 0;
 }
 
 body {
 	margin: 0;
-	padding: min(20px, 5%);
 	background-image: linear-gradient(to bottom right, #0a8ff1, #1e51a0);
 	color: white;
 	min-height: 100vh;
@@ -17,7 +17,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/*border: 1px solid black;*/
 	padding: 3%; 
 }
 
@@ -28,14 +27,19 @@ body {
 	justify-content: center; 
 }
 
-.search-bar > #search, #search-btn {
+.search-bar > #search-btn {
 	background: transparent;
 	border: 1px solid white;
 	border-radius: 8px;
 	color: white; 
 	padding: 5px 8px;
-	margin-right: 5px; 
-	/*--webkit-backdrop-filter : blur(20px);*/
+	margin-left: 5px; 
+}
+
+#search {
+	border: none;
+	border-radius: 8px;
+	padding: 5px 8px;
 }
 
 #search-btn {
@@ -76,8 +80,11 @@ body {
 	width: 95%;
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
 }
 
 .field {
-	width: 50%;
+	width: 80%;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 14px;
 }
