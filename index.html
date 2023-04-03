@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather App</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main class="container">
+		<!-- App Title -->
+		<h2 id="title">Weather App</h2>
+
+		<!-- Search Bar -->
+		<div class="search-bar">
+			<input type="search" name="search" placeholder="Search a city" id="search">
+			<button id="search-btn">SEARCH</button>
+		</div>
+
+		<!-- Icon and Temperature -->
+		<div class='quick-panel'>
+			<img src="" alt="weather image" id="weather-icon">
+			<h1 id="temperature">_-_&#173;C</h1>
+		</div>
+
+		<!-- Main Panel -->
+		<section class="main-panel">
+			<!-- City Name -->
+			<p id='city'>_-_</p>
+
+			<!-- Other Info -->
+			<div id="humidity" class="parameter">
+				<p>Humidity : </p>
+				<p>_-_</p>
+			</div>
+			<div id="precipitation" class="parameter">
+				<p>Precipitation : </p>
+				<p>_-_</p>
+			</div>
+			<div id="Wind" class="parameter">
+				<p>Wind : </p>
+				<p>_-_</p>
+			</div>
+		</section>
+	</main>
+
+
+	<!-- Scripts -->
+	<script src="./node_modules/axios/dist/axios.min.js"></script>
+	<script type="module" src="./app.js"></script>
+</body>
+</html>
