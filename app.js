@@ -3,6 +3,10 @@ const apiKey = '9d51dd32a009464c83d34112230304';
 //Search Bar
 const search = document.querySelector('#search');
 const searchBtn = document.querySelector('#search-btn');
+const quickPanel = document.querySelector('.quick-panel');
+
+const error = document.querySelector(".error");
+
 
 searchBtn.addEventListener('click', () => {
 	const cityName = search.value;
@@ -13,7 +17,11 @@ searchBtn.addEventListener('click', () => {
 		weatherData.then(obj => {
 			console.log(obj.data);
 			displayData(obj.data);
-		}).catch(error => console.log('Error Caught : ', {error}));
+		}).catch(err => {
+			console.log('Error Caught : ', {err});
+			error.style.display = "block";
+			quickPanel.style.display = "none";
+		});
 	}
 });
 
@@ -33,6 +41,8 @@ async function getWeatherData(city) {
 }
 
 function displayData(data) {
+	quickPanel.style.display = "flex";
+	error.style.display = "none";
 	createIcon(data.current.condition.icon);
 	temperature.innerHTML = `${data.current.temp_c}&#x2103;`;
 	city.textContent = `${data.location.name}, ${data.location.country}`;
@@ -42,8 +52,9 @@ function displayData(data) {
 }
 
 function createIcon(iconLink) {
-	const quickPanel = document.querySelector('.quick-panel');
-	quickPanel.removeChild(quickPanel.lastChild)
+	if(quickPanel.lastChild)
+		quickPanel.removeChild(quickPanel.lastChild)
+	
 	const icon = document.createElement('img');
 	icon.src = iconLink;
 	quickPanel.appendChild(icon);

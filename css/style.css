@@ -4,11 +4,12 @@
 	box-sizing: border-box;
 	font-family: "Poppins";
 	padding: 0;
+	margin: 0;
 }
 
 body {
 	margin: 0;
-	background-image: linear-gradient(to bottom right, #0a8ff1, #1e51a0);
+	background-image: linear-gradient(135deg, #0d021c, #2a0341);
 	color: white;
 	min-height: 100vh;
 }
@@ -24,7 +25,8 @@ body {
 	width: 100%;
 	/*background-color: red;*/
 	display: flex;
-	justify-content: center; 
+	justify-content: center;
+	margin: 1rem 0; 
 }
 
 .search-bar > #search-btn {
@@ -40,6 +42,11 @@ body {
 	border: none;
 	border-radius: 8px;
 	padding: 5px 8px;
+}
+
+#search:focus {
+	outline: none;
+	border: 2px solid green;
 }
 
 #search-btn {
@@ -60,9 +67,16 @@ body {
 .quick-panel {
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	/*background-color: red;*/
-	width: 100%;
-	margin: 5% 0; 
+	width: 90%;
+	height: 20vh;
+	margin: 20px 0; 
+}
+
+.quick-panel > img {
+	width: 8rem;
+	height: 8rem;
 }
 
 .main-panel {
@@ -70,10 +84,14 @@ body {
 	background: transparent;
 	border: 1px solid white;
 	border-radius: 8px;
-	width: min(100%, 900px);
+	width: min(100%, 600px);
+	height: 200px; 
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
+	padding: 1rem;
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .parameter {
@@ -84,7 +102,7 @@ body {
 }
 
 .field {
-	width: 80%;
+	margin-right: auto;
 	color: rgba(255, 255, 255, 0.8);
 	font-size: 14px;
 }
