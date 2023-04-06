@@ -12,6 +12,7 @@ searchBtn.addEventListener('click', () => {
 	const cityName = search.value;
 
 	if(cityName) {
+                search.value = "";
 		const weatherData = getWeatherData(cityName);
 
 		weatherData.then(obj => {
@@ -46,7 +47,7 @@ function displayData(data) {
 	createIcon(data.current.condition.icon);
 	temperature.innerHTML = `${data.current.temp_c}&#x2103;`;
 	city.textContent = `${data.location.name}, ${data.location.country}`;
-	humidity.textContent = `${data.current.humidity}`;
+	humidity.textContent = `${data.current.humidity}%`;
 	precipitation.textContent = `${data.current.precip_in} in`;
 	wind.textContent = `${data.current.wind_kph} kph`;
 }
